@@ -39,39 +39,27 @@ public class MainFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public MainFrame() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setTitle("Sistema de Agendamento de Consultas");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(1029, 812);
+		setLocationRelativeTo(null); // Centraliza
+		setResizable(false); // Impede redimensionamento
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
+		contentPane.setLayout(null);
 		setContentPane(contentPane);
-		setTitle("Sistema de Agendamento de Consultas");
-        setSize(987, 720);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        contentPane.setLayout(null);
 
-        JTabbedPane tabs = new JTabbedPane();
-        tabs.setBounds(10, 53, 953, 571);
-        tabs.addTab("Pacientes", new TelaCadastroPaciente());
-        tabs.addTab("Médicos", new TelaCadastroMedico());
-        tabs.addTab("Consultas", new TelaAgendamentoConsulta());
+		JLabel lblNewLabel = new JLabel("Clinica UniFam");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel.setBounds(391, 22, 151, 37);
+		contentPane.add(lblNewLabel);
 
-        getContentPane().add(tabs);
-        
-        JLabel lblNewLabel = new JLabel("Clinica UniFam");
-        lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-        lblNewLabel.setBounds(391, 22, 151, 37);
-        contentPane.add(lblNewLabel);
-        
-        JButton btnNewButton = new JButton("Salvar");
-        btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        btnNewButton.setBounds(313, 634, 85, 21);
-        contentPane.add(btnNewButton);
-        
-        JButton btnNewButton_1 = new JButton("Limpar");
-        btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        btnNewButton_1.setBounds(510, 634, 85, 21);
-        contentPane.add(btnNewButton_1);
+		JTabbedPane tabs = new JTabbedPane();
+		tabs.setBounds(10, 53, 953, 709);
+		tabs.addTab("Pacientes", new TelaCadastroPaciente());
+		tabs.addTab("Médicos", new TelaCadastroMedico());
+		tabs.addTab("Consultas", new TelaAgendamentoConsulta());
+		contentPane.add(tabs);
 	}
 }
